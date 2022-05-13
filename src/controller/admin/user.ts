@@ -12,3 +12,11 @@ export const AddUserController: RequestHandler = async (req, res, next) => {
     return next(new ValidateError(err));
   }
 };
+
+export const GetUsersController:RequestHandler=async(req,res,next)=>{
+  try {
+    await res.json({message:"user responded successfully"}).status(200);
+  } catch (error) {
+    return res.json({message:"something went wrong"}).status(501);
+  }
+}

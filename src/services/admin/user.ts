@@ -26,3 +26,12 @@ export const AddUserService = async (body: ADMIN_REQ.IAddUserRequest) => {
     },
   });
 };
+
+// export const GetUsersService=async()=>{
+//   const userlist=await userModel.findMany({
+//     select:{
+//       id:true,
+
+//     }
+//   })
+// }

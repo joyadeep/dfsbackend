@@ -3,10 +3,11 @@ import { AddFoodController, FetchFoodController } from "../controller/admin/food
 import { AddItemCategoryController } from "../controller/admin/foodCategory";
 import { AddItemTypeController } from "../controller/admin/foodType";
 import { AddOrganizationController } from "../controller/admin/organization";
-import { AddUserController } from "../controller/admin/user";
+import { AddUserController,GetUsersController } from "../controller/admin/user";
 import { verifyCanteenAdmin } from "../middleware/verifyCanteenAdmin";
 import { verifyRole } from "../middleware/verifyRole";
 import { verifySuperAdmin } from "../middleware/verifySuperAdmin";
+import { GetUserService } from "../services/user/user";
 
 const router = express.Router();
 
@@ -22,5 +23,7 @@ router.post("/food/category/create", verifyCanteenAdmin, AddItemCategoryControll
 router.post("/food/type/create", verifyCanteenAdmin, AddItemTypeController);
 //add organization route
 router.post("/organization/create", verifySuperAdmin, AddOrganizationController);
+
+router.get("/user/users",GetUsersController)
 
 export default router;
